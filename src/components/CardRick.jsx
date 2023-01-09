@@ -23,9 +23,12 @@ const colors = ricks.status === 'Alive'?'#33ff00':ricks.status === 'Dead'? 'red'
             <p><i className="fa-solid fa-circle" style={{color:`${colors}`}}>
             </i> {ricks.status}</p>
           </div>
-          <p>Specie: {ricks.species}</p>
-          <p>Origin: {ricks.origin?.name}</p>
-          <p>Episode: {ricks.episode?.length}</p>
+          <p>Specie:</p>
+          <p className="texts2">{ricks.species}</p>
+          <p>Origin:</p>
+          <p className="texts2">{ricks.origin?.name}</p>
+          <p>Episode:</p>
+          <p className="texts2">{ricks.episode?.length}</p>
         </div>
       </div>
 
