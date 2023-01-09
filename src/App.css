@@ -66,8 +66,14 @@
     color: white;
     margin-top: 1rem;
     gap: 1rem;
+  align-items: center;
 }
 
+.Input_2 img{
+  width: 3%;
+  height: 3%;
+  filter: invert(1);
+}
 
 .tatus{
   display: flex;
@@ -99,7 +105,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  padding: 0;
+  padding: 0 2rem;
   list-style: none;
 }
 
@@ -117,6 +123,36 @@
   width: 100%;
 }
 
+.Card2{
+  position: relative;
+  margin: 0 2%;
+}
+
+.loader2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.loader2 p{
+  font-size: 300%;
+color: aliceblue;
+position: absolute;
+top: 71%;
+}
+
+.loader2 img{
+  width: 100%;
+  height: 100%;
+}
+
 .rotate {
   animation: rotation 2s infinite linear;
 }
@@ -131,10 +167,6 @@
   filter: drop-shadow(2px 4px 6px black);
 }
 
-.loaderImg{
-  display: flex;
-  justify-content: center;
-}
 
 @keyframes rotation {
   from {

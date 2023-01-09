@@ -49,13 +49,15 @@ const mundo = checkchId ==='pollito' ? pollito : ''
 
 const [page, setPage] = useState(1)
 		const perPage = 4
-		const quantyPage = Math.ceil(morty.residents?.length / perPage)
+		const quantyPage = morty.residents? Math.ceil(morty.residents?.length / perPage):1
 		
 		const firstIndex = (page - 1) * perPage
 
 		const residents = morty.residents?.slice(firstIndex,firstIndex + perPage)
 
-
+const retro= ()=>{
+	setPage(1)
+}
 		return (
 				<div className='Card1'>
 					{/* <audio controls muted autoPlay >
@@ -68,9 +70,13 @@ const [page, setPage] = useState(1)
 					<div>
 						<div className='Input_1'>
 							<input
-				type="number" min={1} max={126} value={searchId} onChange={(e) => setSearchId(e.target.value)} placeholder={"Ingresa Id (1-126)"}
+				type="number" 
+				min={1} max={126} 
+				value={searchId} 
+				onChange={(e) => setSearchId(e.target.value)} 
+				placeholder={"contains the id of 126 dimensions"}
 			/>
-			<button onClick={searchType}>Search location</button>
+			<button onClick={()=>{searchType();retro()}}>Search location</button>
 			</div>
 
 			<div className='Residents'>
@@ -84,13 +90,16 @@ const [page, setPage] = useState(1)
 			
 				<Page page={page} setPage={setPage} quantyPage={quantyPage} loaders ={loader2} setLoaders={setLoader2}/>
 			
-			<div className='residents_card'>
-			{loader2 && <Loader2 />}
+			<div className='Card2'>
+				{loader2 && <Loader2 />}
+				<div className='residents_card'>
 				{residents?.map(resident => (
 					<CardRick url={resident} key={resident}/>
 				)
 				)}
 			</div>
+			</div>
+			
 				
 		
 				<div>
